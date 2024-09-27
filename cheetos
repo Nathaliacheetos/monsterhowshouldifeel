@@ -1,0 +1,50 @@
+[10:46, 9/27/2024] Nath: <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voltar ao Início</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div style="height: 1500px;">
+        <h1>Bem-vindo ao meu site!</h1>
+        <p>Role para baixo e clique no botão para voltar ao topo.</p>
+    </div>
+
+    <button id="toTopBtn">Voltar ao Início</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
+[10:46, 9/27/2024] Nath: #toTopBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 15px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: none; /* Oculto por padrão */
+}
+
+#toTopBtn:hover {
+    background-color: #0056b3;
+}
+[10:46, 9/27/2024] Nath: // Mostrar o botão quando rolar para baixo
+window.onscroll = function() {
+    const button = document.getElementById("toTopBtn");
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        button.style.display = "block";
+    } else {
+        button.style.display = "none";
+    }
+};
+
+// Função para voltar ao topo
+document.getElementById("toTopBtn").onclick = function() {
+    window.scrollTo({top: 0, behavior: 'smooth'});
+};
